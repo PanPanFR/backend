@@ -13,7 +13,7 @@ const bucketName = 'ml-model-pandu';
 let model;
 const loadModel = async () => {
     const bucket = storage.bucket(bucketName);
-    const file = bucket.file('ml-model-pandu/model.json');
+    const file = bucket.file('model.json');
     const [fileData] = await file.download();
     model = await tf.loadLayersModel(tf.io.bytesLoader(fileData));
 };
